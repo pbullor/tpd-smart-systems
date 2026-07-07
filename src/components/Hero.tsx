@@ -2,13 +2,17 @@
 
 import { ArrowRight, MessageSquare } from "lucide-react";
 import NetworkBackground from "./NetworkBackground";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Hero() {
   const [visible, setVisible] = useState(false);
+  const mounted = useRef(false);
 
   useEffect(() => {
-    setVisible(true);
+    if (!mounted.current) {
+      mounted.current = true;
+      requestAnimationFrame(() => setVisible(true));
+    }
   }, []);
 
   return (
