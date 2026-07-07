@@ -1,40 +1,66 @@
 "use client";
 
-import { Lock, Tag, ShieldCheck, LayoutDashboard } from "lucide-react";
+import {
+  Lock,
+  Tag,
+  ShieldCheck,
+  LayoutDashboard,
+  ArrowRight,
+} from "lucide-react";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
 const solutions = [
   {
     icon: Lock,
     name: "TPD Smart Lockers",
+    tagline: "Gestión inteligente de espacios de guarda",
     description:
-      "Lockers inteligentes con apertura QR, auditoría completa, gestión de usuarios y control remoto.",
-    features: ["Apertura QR", "Auditoría", "Control remoto"],
-    gradient: "from-tpd-teal to-emerald-600",
+      "Lockers con apertura QR, gestión de usuarios, auditoría completa y control remoto. Hardware industrial con licencia perpetua.",
+    benefits: [
+      "Apertura sin contacto vía QR",
+      "Auditoría y trazabilidad",
+      "Control remoto en tiempo real",
+      "API para integraciones",
+    ],
   },
   {
     icon: Tag,
     name: "TPD Smart ESL",
+    tagline: "Etiquetas electrónicas para retail",
     description:
-      "Etiquetas electrónicas para retail, precios dinámicos y gestión centralizada de góndola.",
-    features: ["Precios dinámicos", "E-ink", "Gestión central"],
-    gradient: "from-tpd-blue to-cyan-600",
+      "Precios dinámicos, actualización centralizada y gestión de góndola desde una única plataforma. Sin intervención manual en sucursal.",
+    benefits: [
+      "Actualización masiva de precios",
+      "Gestión multi-sucursal",
+      "Tecnología e-ink",
+      "Integración con ERP",
+    ],
   },
   {
     icon: ShieldCheck,
     name: "TPD Smart Access",
+    tagline: "Control de accesos y trazabilidad",
     description:
-      "Control de accesos con permisos granulares, trazabilidad completa y gestión de identidades.",
-    features: ["Permisos", "Trazabilidad", "Identidades"],
-    gradient: "from-violet-600 to-purple-600",
+      "Gestión de identidades, permisos granulares y registro completo de ingresos. Control centralizado de múltiples puntos de acceso.",
+    benefits: [
+      "Permisos por rol y horario",
+      "Registro de cada acceso",
+      "Gestión de identidades",
+      "Multi-punto centralizado",
+    ],
   },
   {
     icon: LayoutDashboard,
     name: "TPD Smart Platform",
+    tagline: "Plataforma central de administración",
     description:
-      "Plataforma central para administrar dispositivos, usuarios, eventos e integraciones vía API.",
-    features: ["Dashboard", "API REST", "Integraciones"],
-    gradient: "from-amber-500 to-orange-600",
+      "El sistema operativo de tu infraestructura inteligente. Administra dispositivos, usuarios, eventos e integraciones desde un solo lugar.",
+    benefits: [
+      "Dashboard en tiempo real",
+      "API REST documentada",
+      "Multi-tenant",
+      "Reportes y auditoría",
+    ],
   },
 ];
 
@@ -43,46 +69,68 @@ export default function Solutions() {
   const gridRef = useStaggerReveal<HTMLDivElement>(140);
 
   return (
-    <section id="soluciones" className="py-24 px-6 bg-tpd-darker">
+    <section id="soluciones" className="py-28 px-6 lg:px-8 bg-tpd-darker">
       <div className="max-w-6xl mx-auto">
         <div ref={titleRef} className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
-            Soluciones
+          <p className="text-xs text-tpd-teal-light tracking-widest uppercase mb-4">
+            Portfolio de soluciones
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            Soluciones de infraestructura inteligente
           </h2>
-          <p className="mt-4 text-tpd-text-muted">
-            Productos diseñados para industria, retail, logística y espacios
-            corporativos.
+          <p className="mt-5 text-tpd-text-muted leading-relaxed">
+            Cuatro líneas de producto diseñadas para operar de forma
+            independiente o integrada bajo una misma plataforma tecnológica.
           </p>
         </div>
 
-        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div ref={gridRef} className="grid sm:grid-cols-2 gap-5">
           {solutions.map((sol) => (
             <div
               key={sol.name}
-              className="group relative p-6 rounded-xl bg-tpd-card border border-tpd-border hover:border-tpd-teal/40 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(13,148,136,0.1)] overflow-hidden"
+              className="group p-7 rounded-xl bg-tpd-card border border-tpd-border hover:border-tpd-border-hover transition-all duration-300 hover:bg-tpd-card-hover"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${sol.gradient} opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500`} />
-              <div className="relative">
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${sol.gradient} bg-opacity-20 flex items-center justify-center mb-5 opacity-80 group-hover:opacity-100 transition-all group-hover:scale-110 duration-300`}>
-                  <sol.icon size={24} className="text-white" />
+              <div className="flex items-start gap-4 mb-5">
+                <div className="w-11 h-11 shrink-0 rounded-lg bg-tpd-teal/8 flex items-center justify-center group-hover:bg-tpd-teal/12 transition-colors duration-300">
+                  <sol.icon
+                    size={21}
+                    className="text-tpd-teal-light"
+                    strokeWidth={1.5}
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-white">
-                  {sol.name}
-                </h3>
-                <p className="mt-2 text-sm text-tpd-text-muted leading-relaxed">
-                  {sol.description}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {sol.features.map((f) => (
-                    <span
-                      key={f}
-                      className="text-xs px-2.5 py-1 rounded-md bg-white/5 text-tpd-text-muted border border-tpd-border"
-                    >
-                      {f}
-                    </span>
-                  ))}
+                <div>
+                  <h3 className="text-base font-semibold text-white">
+                    {sol.name}
+                  </h3>
+                  <p className="text-xs text-tpd-text-dim mt-0.5">
+                    {sol.tagline}
+                  </p>
                 </div>
               </div>
+
+              <p className="text-sm text-tpd-text-muted leading-relaxed mb-5">
+                {sol.description}
+              </p>
+
+              <ul className="space-y-2 mb-6">
+                {sol.benefits.map((b) => (
+                  <li key={b} className="flex items-center gap-2.5 text-sm">
+                    <span className="w-1 h-1 rounded-full bg-tpd-teal-light shrink-0" />
+                    <span className="text-tpd-text">{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <a
+                href="#contacto"
+                className="inline-flex items-center gap-1.5 text-xs text-tpd-teal-light hover:text-white transition-colors duration-200 font-medium tracking-wide uppercase"
+              >
+                Más información
+                <ArrowRight
+                  size={13}
+                  className="transition-transform duration-200 group-hover:translate-x-0.5"
+                />
+              </a>
             </div>
           ))}
         </div>

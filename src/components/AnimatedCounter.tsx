@@ -21,7 +21,7 @@ function Counter({ end, suffix = "", label }: CounterProps) {
       ([entry]) => {
         if (entry.isIntersecting && !started.current) {
           started.current = true;
-          const duration = 1800;
+          const duration = 2000;
           const start = performance.now();
 
           function step(now: number) {
@@ -42,26 +42,28 @@ function Counter({ end, suffix = "", label }: CounterProps) {
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-tpd-teal-light to-tpd-blue-light bg-clip-text text-transparent">
+      <div className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
         {count}
-        {suffix}
+        <span className="text-tpd-teal-light">{suffix}</span>
       </div>
-      <div className="mt-2 text-sm text-tpd-text-muted">{label}</div>
+      <div className="mt-1.5 text-xs text-tpd-text-muted tracking-wide uppercase">
+        {label}
+      </div>
     </div>
   );
 }
 
 const stats = [
   { end: 500, suffix: "+", label: "Dispositivos desplegados" },
-  { end: 99.9, suffix: "%", label: "Uptime de plataforma" },
+  { end: 99, suffix: ".9%", label: "Disponibilidad" },
   { end: 24, suffix: "/7", label: "Monitoreo continuo" },
-  { end: 10, suffix: "+", label: "Industrias alcanzadas" },
+  { end: 4, suffix: "", label: "Líneas de producto" },
 ];
 
 export default function AnimatedCounter() {
   return (
-    <section className="py-16 px-6 border-y border-tpd-border bg-tpd-darker/50">
-      <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="py-16 px-6 border-y border-tpd-border/60 bg-tpd-darker/80">
+      <div className="max-w-4xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-10">
         {stats.map((s) => (
           <Counter key={s.label} {...s} />
         ))}

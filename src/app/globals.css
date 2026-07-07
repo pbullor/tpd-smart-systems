@@ -3,14 +3,17 @@
 @theme inline {
   --color-tpd-dark: #0a0f1a;
   --color-tpd-darker: #060b14;
-  --color-tpd-card: #111827;
-  --color-tpd-border: #1e293b;
+  --color-tpd-card: #0d1321;
+  --color-tpd-card-hover: #111b2e;
+  --color-tpd-border: #1a2538;
+  --color-tpd-border-hover: #243352;
   --color-tpd-teal: #0d9488;
   --color-tpd-teal-light: #14b8a6;
   --color-tpd-blue: #0284c7;
   --color-tpd-blue-light: #38bdf8;
   --color-tpd-text: #e2e8f0;
-  --color-tpd-text-muted: #94a3b8;
+  --color-tpd-text-muted: #8494a7;
+  --color-tpd-text-dim: #5a6a80;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -26,20 +29,11 @@ body {
 }
 
 @keyframes ping-slow {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(1.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(2); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 .animate-ping-slow {
-  animation: ping-slow 2s ease-in-out infinite;
+  animation: ping-slow 2.5s ease-in-out infinite;
 }

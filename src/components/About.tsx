@@ -1,23 +1,28 @@
 "use client";
 
-import { Building2, Cpu, Globe } from "lucide-react";
+import { Server, KeyRound, Layers, MapPin } from "lucide-react";
 import { useScrollReveal, useStaggerReveal } from "@/hooks/useScrollReveal";
 
-const highlights = [
+const pillars = [
   {
-    icon: Building2,
-    title: "Infraestructura física",
-    text: "Automatización y gestión de espacios corporativos, retail e industriales.",
+    icon: Server,
+    title: "Plataforma tecnológica propia",
+    text: "Software desarrollado internamente para administrar dispositivos, usuarios, permisos y eventos en tiempo real.",
   },
   {
-    icon: Cpu,
-    title: "Industrial IoT",
-    text: "Dispositivos conectados, controladores y gateways para operaciones inteligentes.",
+    icon: KeyRound,
+    title: "Licencia perpetua",
+    text: "Sin costos recurrentes de licencia. Nuestros clientes son dueños de la tecnología que implementan.",
   },
   {
-    icon: Globe,
-    title: "Plataforma centralizada",
-    text: "Software propio para administrar dispositivos, usuarios y eventos en tiempo real.",
+    icon: Layers,
+    title: "Arquitectura modular",
+    text: "Cada componente opera de forma independiente y se integra mediante APIs. Escalable por diseño.",
+  },
+  {
+    icon: MapPin,
+    title: "Desarrollo local",
+    text: "Ingeniería, soporte y evolución de producto desde Argentina. Cercanía real con cada proyecto.",
   },
 ];
 
@@ -26,30 +31,36 @@ export default function About() {
   const gridRef = useStaggerReveal<HTMLDivElement>(120);
 
   return (
-    <section id="nosotros" className="py-24 px-6">
+    <section id="nosotros" className="py-28 px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div ref={titleRef} className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
-            Quiénes somos
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            ¿Por qué TPD Smart Systems?
           </h2>
-          <p className="mt-6 text-lg text-tpd-text-muted leading-relaxed">
-            TPD nace de Tu Precio Digital y evoluciona hacia una plataforma de
-            soluciones inteligentes para infraestructura física, retail,
-            logística e industria.
+          <p className="mt-5 text-tpd-text-muted leading-relaxed">
+            Diseñamos, desarrollamos e implementamos tecnología propia para
+            infraestructura inteligente. Cada solución se adapta a la operación
+            del cliente sin dependencias de terceros.
           </p>
         </div>
 
-        <div ref={gridRef} className="grid md:grid-cols-3 gap-6">
-          {highlights.map((item) => (
+        <div ref={gridRef} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {pillars.map((item) => (
             <div
               key={item.title}
-              className="group p-6 rounded-xl bg-tpd-card border border-tpd-border hover:border-tpd-teal/40 transition-all duration-300 hover:shadow-[0_0_40px_rgba(13,148,136,0.08)] hover:-translate-y-1"
+              className="group p-6 rounded-xl bg-tpd-card border border-tpd-border hover:border-tpd-border-hover transition-all duration-300 hover:bg-tpd-card-hover"
             >
-              <div className="w-12 h-12 rounded-lg bg-tpd-teal/10 flex items-center justify-center mb-4 group-hover:bg-tpd-teal/20 transition-colors">
-                <item.icon size={24} className="text-tpd-teal-light" />
+              <div className="w-11 h-11 rounded-lg bg-tpd-teal/8 flex items-center justify-center mb-5 group-hover:bg-tpd-teal/12 transition-colors duration-300">
+                <item.icon
+                  size={21}
+                  className="text-tpd-teal-light"
+                  strokeWidth={1.5}
+                />
               </div>
-              <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-              <p className="mt-2 text-sm text-tpd-text-muted leading-relaxed">
+              <h3 className="text-[0.95rem] font-semibold text-white leading-snug">
+                {item.title}
+              </h3>
+              <p className="mt-2.5 text-sm text-tpd-text-muted leading-relaxed">
                 {item.text}
               </p>
             </div>
