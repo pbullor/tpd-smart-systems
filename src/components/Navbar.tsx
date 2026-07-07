@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Nosotros", href: "#nosotros" },
   { label: "Soluciones", href: "#soluciones" },
+  { label: "Casos de uso", href: "#casos-de-uso" },
   { label: "Arquitectura", href: "#arquitectura" },
   { label: "Por qué TPD", href: "#por-que-tpd" },
 ];

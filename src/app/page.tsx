@@ -1,8 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import HowItWorks from "@/components/HowItWorks";
+import About from "@/components/About";
 import Solutions from "@/components/Solutions";
+import UseCases from "@/components/UseCases";
 import SmartLockersDetail from "@/components/SmartLockersDetail";
 import Architecture from "@/components/Architecture";
 import WhyTPD from "@/components/WhyTPD";
@@ -16,8 +18,10 @@ export default function Home() {
       <main>
         <Hero />
         <AnimatedCounter />
+        <HowItWorks />
         <About />
         <Solutions />
+        <UseCases />
         <SmartLockersDetail />
         <Architecture />
         <WhyTPD />
