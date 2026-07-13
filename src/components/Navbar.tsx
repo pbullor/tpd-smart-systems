@@ -1,11 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
   { label: "Plataforma", href: "#plataforma" },
   { label: "Soluciones", href: "#soluciones" },
+  { label: "Smart Lockers", href: "https://lockers.tpdsmart.com", external: true },
   { label: "Casos de uso", href: "#casos-de-uso" },
   { label: "Arquitectura", href: "#arquitectura" },
 ];
@@ -35,9 +36,15 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[0.82rem] text-tpd-text-muted hover:text-white transition-colors duration-200"
+              {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className={`text-[0.82rem] transition-colors duration-200 ${
+                link.external
+                  ? "text-tpd-teal-light hover:text-white inline-flex items-center gap-1"
+                  : "text-tpd-text-muted hover:text-white"
+              }`}
             >
               {link.label}
+              {link.external && <ArrowUpRight size={12} />}
             </a>
           ))}
           <a
@@ -63,10 +70,16 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="block py-3 text-sm text-tpd-text-muted hover:text-white transition-colors"
+              {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              className={`block py-3 text-sm transition-colors ${
+                link.external
+                  ? "text-tpd-teal-light hover:text-white inline-flex items-center gap-1"
+                  : "text-tpd-text-muted hover:text-white"
+              }`}
               onClick={() => setOpen(false)}
             >
               {link.label}
+              {link.external && <ArrowUpRight size={12} />}
             </a>
           ))}
           <a

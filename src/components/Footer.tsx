@@ -35,12 +35,17 @@ export default function Footer() {
                 Soluciones
               </div>
               <ul className="space-y-2.5">
-                {[
-                  "Smart Lockers",
-                  "Smart ESL",
-                  "Smart Access",
-                  "Smart Platform",
-                ].map((s) => (
+                <li>
+                  <a
+                    href="https://lockers.tpdsmart.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-tpd-text-muted hover:text-white transition-colors duration-200"
+                  >
+                    Smart Lockers
+                  </a>
+                </li>
+                {["Smart ESL", "Smart Access", "Smart Platform"].map((s) => (
                   <li key={s}>
                     <a
                       href="#soluciones"

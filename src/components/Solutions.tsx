@@ -22,6 +22,9 @@ const solutions = [
       "Control remoto en tiempo real",
       "API para integraciones",
     ],
+    href: "https://lockers.tpdsmart.com",
+    cta: "Ver producto",
+    external: true,
   },
   {
     icon: Tag,
@@ -35,6 +38,9 @@ const solutions = [
       "Tecnología e-ink",
       "Integración con ERP",
     ],
+    href: "#contacto",
+    cta: "Más información",
+    external: false,
   },
   {
     icon: ShieldCheck,
@@ -48,6 +54,9 @@ const solutions = [
       "Gestión de identidades",
       "Multi-punto centralizado",
     ],
+    href: "#contacto",
+    cta: "Más información",
+    external: false,
   },
   {
     icon: LayoutDashboard,
@@ -61,6 +70,9 @@ const solutions = [
       "Multi-tenant",
       "Reportes y auditoría",
     ],
+    href: "#contacto",
+    cta: "Más información",
+    external: false,
   },
 ];
 
@@ -122,10 +134,11 @@ export default function Solutions() {
               </ul>
 
               <a
-                href="#contacto"
+                href={sol.href}
+                {...(sol.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="inline-flex items-center gap-1.5 text-xs text-tpd-teal-light hover:text-white transition-colors duration-200 font-medium tracking-wide uppercase"
               >
-                Más información
+                {sol.cta}
                 <ArrowRight
                   size={13}
                   className="transition-transform duration-200 group-hover:translate-x-0.5"
