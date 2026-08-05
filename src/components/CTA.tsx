@@ -22,7 +22,7 @@ export default function CTA() {
               TPD Smart Systems puede integrarse a tu operación.
             </p>
             <a
-              href="mailto:contacto@tpdsmart.com"
+              href="mailto:hola@tpdsmart.com"
               className="group inline-flex items-center gap-2 mt-8 px-7 py-3 rounded-lg bg-tpd-teal hover:bg-tpd-teal-light text-white text-sm font-medium transition-all duration-300 hover:shadow-[0_0_30px_rgba(13,148,136,0.25)]"
             >
               Contactar a TPD Smart Systems

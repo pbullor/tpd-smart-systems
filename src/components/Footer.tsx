@@ -64,11 +64,11 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 <li>
                   <a
-                    href="mailto:contacto@tpdsmart.com"
+                    href="mailto:hola@tpdsmart.com"
                     className="flex items-center gap-2 text-sm text-tpd-text-muted hover:text-white transition-colors duration-200"
                   >
                     <Mail size={14} strokeWidth={1.5} />
-                    contacto@tpdsmart.com
+                    hola@tpdsmart.com
                   </a>
                 </li>
                 <li>

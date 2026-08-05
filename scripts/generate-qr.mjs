@@ -32,7 +32,7 @@ async function generatePlainSVG() {
 async function generateLogoSVG(plainSvg) {
   const viewBoxMatch = plainSvg.match(/viewBox="([^"]+)"/);
   if (!viewBoxMatch) throw new Error("No viewBox found in SVG");
-  const [, , , vbW, vbH] = viewBoxMatch[1].split(" ").map(Number);
+  const [, , vbW, vbH] = viewBoxMatch[1].split(" ").map(Number);
 
   const cx = vbW / 2;
   const cy = vbH / 2;

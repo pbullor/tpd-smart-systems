@@ -18,7 +18,7 @@ const jsonLd = {
   logo: "https://tpdsmart.com/icon-512.png",
   description:
     "Soluciones tecnológicas para conectar, automatizar y administrar espacios físicos inteligentes. Smart Lockers, ESL, Access Control y plataforma IoT.",
-  email: "contacto@tpdsmart.com",
+  email: "hola@tpdsmart.com",
   sameAs: [],
   knowsAbout: [
     "Industrial IoT",
