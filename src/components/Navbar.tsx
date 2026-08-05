@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
@@ -18,9 +19,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-tpd-darker/90 backdrop-blur-xl border-b border-tpd-border/60">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded bg-gradient-to-br from-tpd-teal to-tpd-blue flex items-center justify-center text-white font-bold text-sm tracking-tight">
-            T
-          </div>
+          <Image src="/logo-isotipo.svg" alt="" width={32} height={32} className="w-8 h-8" />
           <div className="flex items-baseline gap-1.5">
             <span className="text-[1.1rem] font-bold text-white tracking-tight">
               TPD

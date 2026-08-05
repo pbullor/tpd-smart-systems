@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ExternalLink, Mail } from "lucide-react";
 
 export default function Footer() {
@@ -8,9 +9,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="max-w-xs">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded bg-gradient-to-br from-tpd-teal to-tpd-blue flex items-center justify-center text-white font-bold text-sm">
-                T
-              </div>
+              <Image src="/logo-isotipo.svg" alt="" width={32} height={32} className="w-8 h-8" />
               <div className="flex items-baseline gap-1.5">
                 <span className="text-base font-bold text-white tracking-tight">
                   TPD
