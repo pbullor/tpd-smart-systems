@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Bullor;Pablo;;;
+FN:Pablo Bullor
+ORG:TPD Smart Systems
+TITLE:Managing Director
+TEL;TYPE=CELL:+5491128168289
+EMAIL;TYPE=INTERNET:hola@tpdsmart.com
+URL:https://tpdsmart.com
+ADR;TYPE=WORK:;;Buenos Aires;;;Argentina
+NOTE:Tecnología propia para infraestructura inteligente.
+END:VCARD
