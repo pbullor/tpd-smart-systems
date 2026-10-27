@@ -7,6 +7,7 @@ import Solutions from "@/components/Solutions";
 import UseCases from "@/components/UseCases";
 import Architecture from "@/components/Architecture";
 import WhyTPD from "@/components/WhyTPD";
+import Clients from "@/components/Clients";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -52,6 +53,7 @@ export default function Home() {
         <UseCases />
         <Architecture />
         <WhyTPD />
+        <Clients />
         <CTA />
       </main>
       <Footer />
