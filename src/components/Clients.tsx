@@ -13,27 +13,32 @@ export default function Clients() {
   const ref = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section className="py-20 px-6 lg:px-8 bg-tpd-dark">
-      <div ref={ref} className="max-w-5xl mx-auto">
-        <p className="text-center text-sm font-medium tracking-widest uppercase text-tpd-text-muted mb-12">
+    <section className="py-16 px-6 lg:px-8 bg-tpd-darker overflow-hidden">
+      <div ref={ref}>
+        <p className="text-center text-sm font-medium tracking-widest uppercase text-tpd-text-muted mb-10">
           Quiénes nos eligen
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-16">
-          {clients.map((client) => (
-            <div
-              key={client.name}
-              className="opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500"
-            >
-              <Image
-                src={client.logo}
-                alt={client.name}
-                width={120}
-                height={48}
-                className="h-10 sm:h-12 w-auto object-contain brightness-0 invert"
-              />
-            </div>
-          ))}
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-tpd-darker to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-tpd-darker to-transparent z-10 pointer-events-none" />
+
+          <div className="flex animate-marquee">
+            {[...clients, ...clients, ...clients, ...clients].map((client, i) => (
+              <div
+                key={`${client.name}-${i}`}
+                className="flex-shrink-0 mx-10 sm:mx-14 opacity-40 hover:opacity-100 transition-opacity duration-500"
+              >
+                <Image
+                  src={client.logo}
+                  alt={client.name}
+                  width={120}
+                  height={48}
+                  className="h-8 sm:h-10 w-auto object-contain brightness-0 invert"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

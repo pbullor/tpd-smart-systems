@@ -47,13 +47,13 @@ export default function Home() {
       <main>
         <Hero />
         <AnimatedCounter />
+        <Clients />
         <About />
         <Platform />
         <Solutions />
         <UseCases />
         <Architecture />
         <WhyTPD />
-        <Clients />
         <CTA />
       </main>
       <Footer />
