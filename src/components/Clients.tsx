@@ -5,8 +5,8 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const clients = [
   { name: "YPF", logo: "/logos/ypf.svg" },
-  { name: "Manifesto", logo: "/logos/manifesto.svg" },
-  { name: "Match Point", logo: "/logos/matchpoint.svg" },
+  { name: "Manifesto", logo: "/logos/manifesto.png" },
+  { name: "Match Point", logo: "/logos/matchpoint.png" },
 ];
 
 export default function Clients() {
@@ -34,7 +34,7 @@ export default function Clients() {
                   alt={client.name}
                   width={120}
                   height={48}
-                  className="h-8 sm:h-10 w-auto object-contain brightness-0 invert"
+                  className="h-8 sm:h-10 w-auto object-contain mix-blend-lighten"
                 />
               </div>
             ))}
