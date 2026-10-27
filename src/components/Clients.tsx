@@ -32,9 +32,9 @@ export default function Clients() {
                 <Image
                   src={client.logo}
                   alt={client.name}
-                  width={120}
-                  height={48}
-                  className="h-8 sm:h-10 w-auto object-contain mix-blend-lighten"
+                  width={200}
+                  height={80}
+                  className="h-12 sm:h-16 w-auto object-contain mix-blend-lighten"
                 />
               </div>
             ))}
